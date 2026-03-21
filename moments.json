@@ -1,0 +1,26 @@
+[
+  {
+    "number": 1,
+    "name": "Sample",
+    "relationship": "Example",
+    "text": "This is a sample photo moment — replace with real submissions.",
+    "photo": null,
+    "video": null
+  },
+  {
+    "number": 2,
+    "name": "Sample",
+    "relationship": "Example",
+    "text": "This is a sample text-only moment. It should display with large quote typography.",
+    "photo": null,
+    "video": null
+  },
+  {
+    "number": 3,
+    "name": "Sample",
+    "relationship": "Example",
+    "text": "This is a sample video moment — replace with a real video file.",
+    "photo": null,
+    "video": null
+  }
+]
