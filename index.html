@@ -183,7 +183,199 @@
       }
     }
 
-    /* TV MODE STYLES */
+    /* ============================================================
+       TV MODE
+    ============================================================ */
+    body.tv-mode {
+      background: #000;
+      overflow: hidden;
+    }
+
+    body.tv-mode .hero,
+    body.tv-mode .moments,
+    body.tv-mode .footer {
+      display: none;
+    }
+
+    .tv-slideshow {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #000;
+      color: #fff;
+      font-family: -apple-system, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body.tv-mode .tv-slideshow {
+      display: block;
+    }
+
+    /* Start screen */
+    .tv-start {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .tv-start .number {
+      font-size: 120px;
+      font-weight: 700;
+      line-height: 1;
+      background: linear-gradient(135deg, #af52de, #ff2d55, #ff9500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .tv-start h1 {
+      font-size: 48px;
+      font-weight: 600;
+      color: #fff;
+      margin-top: 8px;
+    }
+
+    .tv-start .tap-hint {
+      font-size: 17px;
+      color: rgba(255,255,255,0.4);
+      margin-top: 32px;
+    }
+
+    /* Slide container */
+    .tv-slide {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+      z-index: 5;
+    }
+
+    .tv-slide.active {
+      opacity: 1;
+    }
+
+    /* Photo slide */
+    .tv-slide-photo {
+      position: absolute;
+      inset: 0;
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+    }
+
+    .tv-slide-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 60px 48px 48px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.85));
+      z-index: 2;
+    }
+
+    .tv-slide-text {
+      font-size: 28px;
+      font-weight: 400;
+      font-style: italic;
+      color: #fff;
+      line-height: 1.4;
+      max-width: 700px;
+    }
+
+    .tv-slide-author {
+      font-size: 17px;
+      color: rgba(255,255,255,0.6);
+      margin-top: 12px;
+    }
+
+    /* Text-only slide */
+    .tv-slide-text-only {
+      text-align: center;
+      padding: 48px;
+      max-width: 800px;
+    }
+
+    .tv-slide-text-only .tv-slide-text {
+      font-size: 36px;
+      max-width: none;
+    }
+
+    .tv-slide-text-only .tv-slide-author {
+      font-size: 21px;
+      margin-top: 24px;
+    }
+
+    /* Video slide */
+    .tv-slide video {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    /* Progress bar */
+    .tv-progress {
+      position: fixed;
+      top: 24px;
+      left: 32px;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      z-index: 20;
+    }
+
+    /* Pause indicator */
+    .tv-paused-indicator {
+      position: fixed;
+      top: 24px;
+      right: 32px;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 1px;
+      z-index: 20;
+      display: none;
+    }
+
+    body.tv-paused .tv-paused-indicator {
+      display: block;
+    }
+
+    /* Grandkids finale card */
+    .tv-slide-finale {
+      text-align: center;
+    }
+
+    .tv-slide-finale .finale-number {
+      font-size: 120px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #af52de, #ff2d55, #ff9500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+
+    .tv-slide-finale .finale-text {
+      font-size: 36px;
+      font-weight: 400;
+      color: #fff;
+      margin-top: 16px;
+    }
+
+    .tv-slide-finale .finale-sub {
+      font-size: 21px;
+      color: rgba(255,255,255,0.4);
+      margin-top: 16px;
+    }
 
   </style>
 </head>
@@ -214,9 +406,224 @@
     70 Moments for Mary
   </footer>
 
-  <script>
-    // TV MODE JS
+  <!-- ============================================================
+       TV SLIDESHOW
+  ============================================================ -->
+  <div class="tv-slideshow">
+    <div class="tv-start" id="tv-start">
+      <span class="number">70</span>
+      <h1>Moments for Mary</h1>
+      <p class="tap-hint">Click anywhere to start</p>
+    </div>
+    <div class="tv-progress" id="tv-progress"></div>
+    <div class="tv-paused-indicator">PAUSED</div>
+    <div id="tv-slides-container"></div>
+  </div>
 
+  <script>
+    var isTvMode = new URLSearchParams(window.location.search).get('mode') === 'tv';
+
+    if (isTvMode) {
+      document.body.classList.add('tv-mode');
+    }
+
+    // ============================================================
+    // TV MODE
+    // ============================================================
+    var tvMoments = [];
+    var tvCurrentIndex = 0;
+    var tvTimer = null;
+    var tvPaused = false;
+    var tvStarted = false;
+    var SLIDE_DURATION = 12000;
+
+    function buildTvSlide(moment, total) {
+      var slide = document.createElement('div');
+      slide.className = 'tv-slide';
+
+      var isLast = moment.number === tvMoments[tvMoments.length - 1].number;
+      var hasPhoto = moment.photo != null;
+      var hasVideo = moment.video != null;
+
+      // Check if this is the grandkids finale (last moment)
+      if (isLast && total > 1) {
+        slide.classList.add('tv-slide-finale-wrap');
+        slide.innerHTML =
+          '<div class="tv-slide-finale">' +
+            '<div class="finale-number">70</div>' +
+            '<div class="finale-text">The grandkids — live</div>' +
+            '<div class="finale-sub">This moment belongs to them.</div>' +
+          '</div>';
+        slide.dataset.finale = 'true';
+        return slide;
+      }
+
+      if (hasVideo) {
+        var video = document.createElement('video');
+        video.src = moment.video;
+        video.playsInline = true;
+        video.preload = 'metadata';
+        video.style.maxWidth = '100%';
+        video.style.maxHeight = '100%';
+        slide.appendChild(video);
+        slide.dataset.video = 'true';
+
+        if (moment.text) {
+          var overlay = document.createElement('div');
+          overlay.className = 'tv-slide-overlay';
+          overlay.innerHTML =
+            '<div class="tv-slide-text">' + escapeHtml(moment.text) + '</div>' +
+            '<div class="tv-slide-author">— ' + escapeHtml(moment.name) + '</div>';
+          slide.appendChild(overlay);
+        }
+      } else if (hasPhoto) {
+        var img = document.createElement('img');
+        img.className = 'tv-slide-photo';
+        img.src = moment.photo;
+        img.alt = '';
+        slide.appendChild(img);
+
+        var overlay = document.createElement('div');
+        overlay.className = 'tv-slide-overlay';
+        overlay.innerHTML =
+          '<div class="tv-slide-text">' + escapeHtml(moment.text) + '</div>' +
+          '<div class="tv-slide-author">— ' + escapeHtml(moment.name) + '</div>';
+        slide.appendChild(overlay);
+      } else {
+        var textWrap = document.createElement('div');
+        textWrap.className = 'tv-slide-text-only';
+        textWrap.innerHTML =
+          '<div class="tv-slide-text">"' + escapeHtml(moment.text) + '"</div>' +
+          '<div class="tv-slide-author">— ' + escapeHtml(moment.name) + ', ' + escapeHtml(moment.relationship) + '</div>';
+        slide.appendChild(textWrap);
+      }
+
+      return slide;
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function showTvSlide(index) {
+      var container = document.getElementById('tv-slides-container');
+      var slides = container.querySelectorAll('.tv-slide');
+      slides.forEach(function(s) { s.classList.remove('active'); });
+
+      // Stop any playing videos
+      container.querySelectorAll('video').forEach(function(v) {
+        v.pause();
+        v.currentTime = 0;
+      });
+
+      tvCurrentIndex = index;
+      var slide = slides[index];
+      slide.classList.add('active');
+
+      var progress = document.getElementById('tv-progress');
+      progress.textContent = 'Moment ' + tvMoments[index].number + ' of ' + tvMoments[tvMoments.length - 1].number;
+
+      // Clear existing timer
+      clearTimeout(tvTimer);
+
+      // Don't auto-advance on finale
+      if (slide.dataset.finale === 'true') {
+        return;
+      }
+
+      // Handle video slides
+      if (slide.dataset.video === 'true') {
+        var video = slide.querySelector('video');
+        video.play().catch(function() {});
+        video.onended = function() {
+          if (!tvPaused) tvAdvance();
+        };
+        return;
+      }
+
+      // Auto-advance for photo/text slides
+      if (!tvPaused) {
+        tvTimer = setTimeout(tvAdvance, SLIDE_DURATION);
+      }
+    }
+
+    function tvAdvance() {
+      if (tvCurrentIndex < tvMoments.length - 1) {
+        showTvSlide(tvCurrentIndex + 1);
+      }
+    }
+
+    function tvPrev() {
+      if (tvCurrentIndex > 0) {
+        showTvSlide(tvCurrentIndex - 1);
+      }
+    }
+
+    function tvTogglePause() {
+      tvPaused = !tvPaused;
+      document.body.classList.toggle('tv-paused', tvPaused);
+      if (!tvPaused) {
+        // Resume — set timer for current slide
+        var slide = document.getElementById('tv-slides-container').querySelectorAll('.tv-slide')[tvCurrentIndex];
+        if (slide.dataset.finale !== 'true' && slide.dataset.video !== 'true') {
+          tvTimer = setTimeout(tvAdvance, SLIDE_DURATION);
+        }
+      } else {
+        clearTimeout(tvTimer);
+      }
+    }
+
+    function initTvMode(moments) {
+      tvMoments = moments;
+      var container = document.getElementById('tv-slides-container');
+
+      moments.forEach(function(m) {
+        container.appendChild(buildTvSlide(m, moments.length));
+      });
+
+      // Start screen click handler
+      document.getElementById('tv-start').addEventListener('click', function() {
+        this.style.display = 'none';
+        tvStarted = true;
+        showTvSlide(0);
+      });
+
+      // Keyboard controls
+      document.addEventListener('keydown', function(e) {
+        if (!tvStarted) {
+          // Any key starts the show
+          document.getElementById('tv-start').style.display = 'none';
+          tvStarted = true;
+          showTvSlide(0);
+          return;
+        }
+
+        switch (e.code) {
+          case 'Space':
+            e.preventDefault();
+            tvTogglePause();
+            break;
+          case 'ArrowRight':
+            tvAdvance();
+            break;
+          case 'ArrowLeft':
+            tvPrev();
+            break;
+          case 'KeyF':
+            if (document.fullscreenElement) {
+              document.exitFullscreen();
+            } else {
+              document.documentElement.requestFullscreen();
+            }
+            break;
+        }
+      });
+    }
+
+    // ============================================================
+    // PHONE MODE — Card Builder
+    // ============================================================
     function buildCard(moment) {
       const hasPhoto = moment.photo != null;
       const hasVideo = moment.video != null;
@@ -289,8 +696,6 @@
     }
 
     document.addEventListener('DOMContentLoaded', function () {
-      const container = document.getElementById('moments-container');
-
       fetch('moments.json')
         .then(function (res) {
           if (!res.ok) throw new Error('Failed to load moments.json (' + res.status + ')');
@@ -298,20 +703,29 @@
         })
         .then(function (moments) {
           moments.sort(function (a, b) { return a.number - b.number; });
-          const fragment = document.createDocumentFragment();
-          moments.forEach(function (moment) {
-            fragment.appendChild(buildCard(moment));
-          });
-          container.appendChild(fragment);
+
+          if (isTvMode) {
+            initTvMode(moments);
+          } else {
+            var container = document.getElementById('moments-container');
+            var fragment = document.createDocumentFragment();
+            moments.forEach(function (moment) {
+              fragment.appendChild(buildCard(moment));
+            });
+            container.appendChild(fragment);
+          }
         })
         .catch(function (err) {
           console.error(err);
-          const msg = document.createElement('p');
-          msg.style.textAlign = 'center';
-          msg.style.color = '#86868b';
-          msg.style.padding = '48px 24px';
-          msg.textContent = 'Moments are on their way…';
-          container.appendChild(msg);
+          if (!isTvMode) {
+            var container = document.getElementById('moments-container');
+            var msg = document.createElement('p');
+            msg.style.textAlign = 'center';
+            msg.style.color = '#86868b';
+            msg.style.padding = '48px 24px';
+            msg.textContent = 'Moments are on their way…';
+            container.appendChild(msg);
+          }
         });
     });
   </script>
