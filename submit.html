@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>70 Moments for Mary</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+      background-color: #fff;
+      color: #1d1d1f;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      width: 100%;
+      padding: 72px 24px 56px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .hero-number {
+      font-size: clamp(96px, 22vw, 180px);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -4px;
+      background: linear-gradient(135deg, #af52de, #ff2d55, #ff9500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      user-select: none;
+    }
+
+    .hero-title {
+      font-size: clamp(28px, 6vw, 44px);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #1d1d1f;
+      line-height: 1.1;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(16px, 3.5vw, 20px);
+      font-weight: 400;
+      color: #86868b;
+      max-width: 400px;
+      line-height: 1.5;
+    }
+
+    /* ── Card ── */
+    .card-wrapper {
+      width: 100%;
+      max-width: 560px;
+      padding: 0 20px 80px;
+    }
+
+    .card {
+      background: #f5f5f7;
+      border-radius: 20px;
+      padding: 36px 32px 40px;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 28px 20px 32px;
+      }
+    }
+
+    /* ── Form ── */
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .form-group:last-of-type {
+      margin-bottom: 0;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1d1d1f;
+      letter-spacing: 0.01em;
+    }
+
+    label .optional {
+      font-weight: 400;
+      color: #86868b;
+      margin-left: 4px;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      background: #fff;
+      border: 1.5px solid transparent;
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-family: inherit;
+      font-size: 16px;
+      color: #1d1d1f;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    input[type="text"]::placeholder,
+    textarea::placeholder {
+      color: #b0b0b5;
+    }
+
+    input[type="text"]:focus,
+    textarea:focus {
+      border-color: #af52de;
+      box-shadow: 0 0 0 3px rgba(175, 82, 222, 0.12);
+    }
+
+    textarea {
+      min-height: 148px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    /* ── File Input ── */
+    .file-input-wrapper {
+      position: relative;
+    }
+
+    input[type="file"] {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+    }
+
+    .file-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #fff;
+      border: 1.5px dashed #d0d0d5;
+      border-radius: 12px;
+      padding: 16px 20px;
+      cursor: pointer;
+      transition: border-color 0.2s ease, background 0.2s ease;
+      font-size: 15px;
+      color: #86868b;
+      font-weight: 400;
+    }
+
+    .file-label:hover {
+      border-color: #af52de;
+      background: #fdf5ff;
+      color: #af52de;
+    }
+
+    .file-label .file-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .file-label .file-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .file-label .file-text strong {
+      font-weight: 600;
+      color: #1d1d1f;
+      font-size: 14px;
+    }
+
+    .file-label .file-text span {
+      font-size: 13px;
+      color: #86868b;
+    }
+
+    .file-label.has-file {
+      border-color: #30d158;
+      background: #f0fef4;
+      color: #1d1d1f;
+    }
+
+    .file-label.has-file .file-text strong {
+      color: #25a244;
+    }
+
+    .video-note {
+      font-size: 13px;
+      color: #86868b;
+      line-height: 1.5;
+      margin-top: 10px;
+    }
+
+    .video-note a {
+      color: #af52de;
+      text-decoration: none;
+    }
+
+    .video-note a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Divider ── */
+    .form-divider {
+      height: 1px;
+      background: #e5e5ea;
+      margin: 28px 0;
+    }
+
+    /* ── Submit ── */
+    .submit-btn {
+      width: 100%;
+      padding: 17px 24px;
+      font-family: inherit;
+      font-size: 17px;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(135deg, #af52de, #ff2d55, #ff9500);
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      letter-spacing: 0.01em;
+      transition: opacity 0.2s ease, transform 0.15s ease;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .submit-btn:hover {
+      opacity: 0.88;
+    }
+
+    .submit-btn:active {
+      transform: scale(0.98);
+      opacity: 0.92;
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* ── Thank You ── */
+    #thanks-message {
+      display: none;
+      text-align: center;
+      padding: 16px 8px 8px;
+    }
+
+    .thanks-icon {
+      font-size: 56px;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .thanks-heading {
+      font-size: 26px;
+      font-weight: 700;
+      color: #1d1d1f;
+      letter-spacing: -0.3px;
+      margin-bottom: 14px;
+    }
+
+    .thanks-body {
+      font-size: 17px;
+      color: #86868b;
+      line-height: 1.6;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 0 24px 40px;
+      text-align: center;
+      font-size: 13px;
+      color: #c7c7cc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-number" aria-hidden="true">70</div>
+    <h1 class="hero-title">Moments for Mary</h1>
+    <p class="hero-subtitle">Share your moment for Mary's 70th birthday.</p>
+  </section>
+
+  <!-- Form Card -->
+  <div class="card-wrapper">
+    <div class="card">
+
+      <!-- Thank you state -->
+      <div id="thanks-message">
+        <div class="thanks-icon">&#10024;</div>
+        <h2 class="thanks-heading">Thank you!</h2>
+        <p class="thanks-body">Your moment has been saved. Mary is going to love this.</p>
+      </div>
+
+      <!-- Submission form -->
+      <form id="submission-form" action="https://formspree.io/f/PLACEHOLDER" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_next" value="THANKYOU_URL">
+
+        <div class="form-group">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" required placeholder="First and last name">
+        </div>
+
+        <div class="form-group">
+          <label for="relationship">Your relationship to Mary</label>
+          <input type="text" id="relationship" name="relationship" required placeholder="daughter, neighbor, friend of 40 years">
+        </div>
+
+        <div class="form-group">
+          <label for="moment">Your moment</label>
+          <textarea id="moment" name="moment" required placeholder="Share a memory, a message, or something you want Mary to know..."></textarea>
+        </div>
+
+        <div class="form-divider"></div>
+
+        <div class="form-group">
+          <label for="photo">Photo <span class="optional">(optional)</span></label>
+          <div class="file-input-wrapper">
+            <input type="file" id="photo" name="photo" accept="image/*">
+            <label for="photo" class="file-label" id="file-label-display">
+              <span class="file-icon">&#128247;</span>
+              <span class="file-text">
+                <strong>Choose a photo</strong>
+                <span>JPG, PNG, HEIC &mdash; any size</span>
+              </span>
+            </label>
+          </div>
+          <p class="video-note">
+            Want to share a video or voice message? Drop it in the shared folder:
+            <a href="#" target="_blank" rel="noopener">link TBD</a>
+          </p>
+        </div>
+
+        <div class="form-divider"></div>
+
+        <button type="submit" class="submit-btn">Share my moment</button>
+      </form>
+
+    </div>
+  </div>
+
+  <footer>
+    Made with love for Mary's 70th &#10084;&#65039;
+  </footer>
+
+  <script>
+    // Show thank-you state if ?thanks=1 is in the URL
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      if (params.get('thanks') === '1') {
+        var form = document.getElementById('submission-form');
+        var thanks = document.getElementById('thanks-message');
+        if (form) form.style.display = 'none';
+        if (thanks) thanks.style.display = 'block';
+      }
+    })();
+
+    // Update file label when a file is chosen
+    var fileInput = document.getElementById('photo');
+    var fileLabelDisplay = document.getElementById('file-label-display');
+
+    if (fileInput && fileLabelDisplay) {
+      fileInput.addEventListener('change', function () {
+        var file = fileInput.files && fileInput.files[0];
+        if (file) {
+          var iconSpan = fileLabelDisplay.querySelector('.file-icon');
+          var nameSpan = fileLabelDisplay.querySelector('.file-text strong');
+          var metaSpan = fileLabelDisplay.querySelector('.file-text span');
+          if (iconSpan) iconSpan.textContent = '\u2705';
+          if (nameSpan) nameSpan.textContent = file.name;
+          if (metaSpan) {
+            var kb = Math.round(file.size / 1024);
+            metaSpan.textContent = kb > 1024
+              ? (kb / 1024).toFixed(1) + ' MB'
+              : kb + ' KB';
+          }
+          fileLabelDisplay.classList.add('has-file');
+        } else {
+          var iconSpan = fileLabelDisplay.querySelector('.file-icon');
+          var nameSpan = fileLabelDisplay.querySelector('.file-text strong');
+          var metaSpan = fileLabelDisplay.querySelector('.file-text span');
+          if (iconSpan) iconSpan.textContent = '\uD83D\uDCF7';
+          if (nameSpan) nameSpan.textContent = 'Choose a photo';
+          if (metaSpan) metaSpan.textContent = 'JPG, PNG, HEIC \u2014 any size';
+          fileLabelDisplay.classList.remove('has-file');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
