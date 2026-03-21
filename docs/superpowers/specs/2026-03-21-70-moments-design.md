@@ -2,27 +2,32 @@
 
 ## Purpose
 
-A digital keepsake for Mary's 70th birthday. 30ish people submit moments (photo + message, text-only, or video) via a Google Form before the party. The moments are displayed as a full-screen slideshow on a TV at the party (March 28) via AirPlay, and live forever as a scrollable keepsake page Mary can visit on her phone.
+A digital keepsake for Mary's 70th birthday. 30ish people submit moments (photo + message, text-only, or video) via a custom submission page before the party. The moments are displayed as a full-screen slideshow on a TV at the party (March 28) via AirPlay, and live forever as a scrollable keepsake page Mary can visit on her phone.
 
 ## System Overview
 
-Two independent pieces:
+Three pieces:
 
-1. **Google Form** — collects submissions. Files land in Brian's Google Drive.
-2. **Static HTML site on GitHub Pages** — one page, two modes (TV slideshow + phone keepsake). No backend, no database, no accounts.
+1. **Submission page** (`submit.html`) — custom-built form matching the 70 Moments aesthetic. Text fields handled by Formspree (free tier, emails submissions to Brian). Photo uploads included via Formspree (up to 10MB per file). For videos, a shared Google Drive or iCloud link is provided for contributors to drop files into.
+2. **Display site** (`index.html`) — one page, two modes (TV slideshow + phone keepsake). No backend, no database, no accounts.
+3. **Curation** — Brian downloads submissions from email/Drive, organizes into a data file and asset folders, pushes to GitHub.
 
-Brian manually curates: downloads submissions from Drive, organizes into a data file and asset folders, pushes to GitHub.
+## Submission Page (`submit.html`)
 
-## Google Form
+Custom HTML form styled to match the 70 Moments brand. Hosted alongside the display site on GitHub Pages.
 
-Five fields:
-- **Your name** (short text, required)
-- **Your relationship to Mary** (short text, e.g. "daughter", "neighbor")
-- **Your moment** (paragraph text — memory, message, or caption)
-- **Photo** (file upload, optional)
-- **Video or voice message** (file upload, optional)
+Fields:
+- **Your name** (text, required)
+- **Your relationship to Mary** (text, required — e.g. "daughter", "neighbor", "friend of 40 years")
+- **Your moment** (textarea — memory, message, or caption)
+- **Photo** (file upload, optional, up to 10MB — Formspree handles this)
+- **Video or voice message** — not uploaded via form (too large). Instead, a note with a shared Drive/iCloud link is shown for video contributors.
 
-Brian creates this in Google Forms manually. No code needed — just instructions.
+Form backend: **Formspree** (free tier, 50 submissions/month). Submissions arrive in Brian's email with any attached photo. Brian signs up at formspree.io, creates a form, gets an endpoint URL.
+
+After submission: a confirmation message ("Thank you! Your moment has been saved.") with the 70 Moments branding.
+
+Styling: same Apple-style aesthetic as the display page — gradient "70", clean typography, warm and personal. Should feel like part of the experience, not a generic form.
 
 ## Display Site
 
@@ -101,7 +106,8 @@ Activated by URL parameter. Designed for AirPlay to Apple TV — full-screen bro
 
 ```
 ~/Projects/70-moments/
-  index.html          — the single-page app (phone + TV modes)
+  index.html          — the display page (phone + TV modes)
+  submit.html         — the submission form
   moments.json        — curated moment data
   assets/
     photos/           — uploaded photos
@@ -111,8 +117,8 @@ Activated by URL parameter. Designed for AirPlay to Apple TV — full-screen bro
 
 ## Curation Workflow
 
-1. Brian creates Google Form, sends link to ~30 people
-2. Submissions arrive in Google Drive
+1. Brian sends the submit.html link to ~30 people
+2. Submissions arrive in Brian's email via Formspree (with photo attachments). Videos arrive in shared Drive/iCloud folder.
 3. Brian downloads photos/videos, renames them sensibly (e.g. `brian.jpg`)
 4. Brian edits `moments.json` — adds entries, sets order, assigns numbers
 5. `git add . && git push` — GitHub Pages deploys automatically
@@ -130,7 +136,7 @@ Activated by URL parameter. Designed for AirPlay to Apple TV — full-screen bro
 
 - Party: March 28, 2026 — 7 days from now
 - ~30 contributors max
-- No backend, no build tools, no frameworks — vanilla HTML/CSS/JS
+- No build tools, no frameworks — vanilla HTML/CSS/JS + Formspree for form handling
 - Must work on all devices via standard browser
 - TV mode via AirPlay from any Apple device
 - Mary keeps the URL forever
@@ -139,5 +145,6 @@ Activated by URL parameter. Designed for AirPlay to Apple TV — full-screen bro
 
 - User accounts or authentication
 - Real-time live submissions at the party
-- Automatic ingestion from Google Form (manual curation)
+- Automatic ingestion from form submissions (manual curation)
 - Custom domain (GitHub Pages default URL is fine)
+- Video upload via the form (too large — shared Drive/iCloud link instead)
