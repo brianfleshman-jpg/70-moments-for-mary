@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>70 Moments for Mary</title>
+  <style>
+    /* ============================================================
+       BASE
+    ============================================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      background: #fff;
+      color: #1d1d1f;
+      font-family: -apple-system, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+      text-align: center;
+      padding: 80px 24px 60px;
+    }
+
+    .hero-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .hero .number {
+      display: block;
+      font-size: 96px;
+      font-weight: 700;
+      line-height: 1;
+      background: linear-gradient(135deg, #af52de, #ff2d55, #ff9500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 8px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+      color: #1d1d1f;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .hero .subtitle {
+      font-size: 21px;
+      color: #86868b;
+      line-height: 1.4;
+    }
+
+    /* ============================================================
+       CARDS SECTION
+    ============================================================ */
+    .moments {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 0 48px;
+    }
+
+    /* ============================================================
+       CARD
+    ============================================================ */
+    .card {
+      background: #f5f5f7;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    /* --- Media (photo / video) --- */
+    .card-media {
+      width: 100%;
+      display: block;
+    }
+
+    .card-media img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      max-height: 400px;
+    }
+
+    .card-media video {
+      width: 100%;
+      display: block;
+      max-height: 400px;
+      background: #000;
+    }
+
+    /* --- Body --- */
+    .card-body {
+      padding: 24px 28px 28px;
+    }
+
+    /* Text-only cards get bigger quote treatment */
+    .card--text-only .card-body {
+      padding: 32px;
+    }
+
+    /* Quote text */
+    .card-text {
+      font-style: italic;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #1d1d1f;
+      margin-bottom: 16px;
+    }
+
+    .card--text-only .card-text {
+      font-size: 21px;
+      line-height: 1.5;
+    }
+
+    /* Attribution row */
+    .card-attribution {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .card-name {
+      font-size: 14px;
+      color: #86868b;
+      font-weight: 500;
+    }
+
+    .card-relationship {
+      font-size: 14px;
+      color: #86868b;
+    }
+
+    .card-label {
+      font-size: 12px;
+      color: #86868b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .footer {
+      text-align: center;
+      padding: 48px 24px 64px;
+      color: #86868b;
+      font-size: 14px;
+    }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 639px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero .number {
+        font-size: 64px;
+      }
+
+      .moments {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
+
+    /* TV MODE STYLES */
+
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="number">70</span>
+      <h1>Moments for Mary</h1>
+      <p class="subtitle">A keepsake of love from the people who know her best.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MOMENTS
+  ============================================================ -->
+  <main class="moments" id="moments-container">
+    <!-- Cards injected by JS -->
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    70 Moments for Mary
+  </footer>
+
+  <script>
+    // TV MODE JS
+
+    function buildCard(moment) {
+      const hasPhoto = moment.photo != null;
+      const hasVideo = moment.video != null;
+      const isTextOnly = !hasPhoto && !hasVideo;
+
+      const card = document.createElement('article');
+      card.className = 'card' + (isTextOnly ? ' card--text-only' : '');
+
+      // --- Media ---
+      if (hasVideo) {
+        const mediaWrap = document.createElement('div');
+        mediaWrap.className = 'card-media';
+        const video = document.createElement('video');
+        video.src = moment.video;
+        video.controls = true;
+        video.playsInline = true;
+        video.preload = 'metadata';
+        mediaWrap.appendChild(video);
+        card.appendChild(mediaWrap);
+      } else if (hasPhoto) {
+        const mediaWrap = document.createElement('div');
+        mediaWrap.className = 'card-media';
+        const img = document.createElement('img');
+        img.src = moment.photo;
+        img.alt = moment.name + ' — ' + moment.relationship;
+        img.loading = 'lazy';
+        mediaWrap.appendChild(img);
+        card.appendChild(mediaWrap);
+      }
+
+      // --- Body ---
+      const body = document.createElement('div');
+      body.className = 'card-body';
+
+      const text = document.createElement('p');
+      text.className = 'card-text';
+      text.textContent = moment.text;
+      body.appendChild(text);
+
+      const attribution = document.createElement('div');
+      attribution.className = 'card-attribution';
+
+      const nameRelWrap = document.createElement('span');
+
+      const nameEl = document.createElement('span');
+      nameEl.className = 'card-name';
+      nameEl.textContent = moment.name;
+      nameRelWrap.appendChild(nameEl);
+
+      if (moment.relationship) {
+        const sep = document.createTextNode(' · ');
+        nameRelWrap.appendChild(sep);
+        const relEl = document.createElement('span');
+        relEl.className = 'card-relationship';
+        relEl.textContent = moment.relationship;
+        nameRelWrap.appendChild(relEl);
+      }
+
+      attribution.appendChild(nameRelWrap);
+
+      const label = document.createElement('span');
+      label.className = 'card-label';
+      label.textContent = 'Moment ' + moment.number;
+      attribution.appendChild(label);
+
+      body.appendChild(attribution);
+      card.appendChild(body);
+
+      return card;
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const container = document.getElementById('moments-container');
+
+      fetch('moments.json')
+        .then(function (res) {
+          if (!res.ok) throw new Error('Failed to load moments.json (' + res.status + ')');
+          return res.json();
+        })
+        .then(function (moments) {
+          moments.sort(function (a, b) { return a.number - b.number; });
+          const fragment = document.createDocumentFragment();
+          moments.forEach(function (moment) {
+            fragment.appendChild(buildCard(moment));
+          });
+          container.appendChild(fragment);
+        })
+        .catch(function (err) {
+          console.error(err);
+          const msg = document.createElement('p');
+          msg.style.textAlign = 'center';
+          msg.style.color = '#86868b';
+          msg.style.padding = '48px 24px';
+          msg.textContent = 'Moments are on their way…';
+          container.appendChild(msg);
+        });
+    });
+  </script>
+
+</body>
+</html>
