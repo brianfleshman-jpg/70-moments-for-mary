@@ -322,7 +322,7 @@
       </div>
 
       <!-- Submission form -->
-      <form id="submission-form" action="https://formspree.io/f/xaqpgwkr" method="POST">
+      <form id="submission-form" action="https://formspree.io/f/xaqpgwkr" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="_next" value="https://brianfleshman-jpg.github.io/70-moments-for-mary/submit.html?thanks=1">
 
         <div class="form-group">
@@ -343,9 +343,10 @@
         <div class="form-divider"></div>
 
         <div class="form-group">
+          <label for="photo">Photo <span class="optional">(optional)</span></label>
+          <input type="file" id="photo" name="photo" accept="image/*">
           <p class="video-note">
-            Have a photo, video, or voice message to include?
-            <a href="https://www.icloud.com/iclouddrive/0a1K4jBfrVoduOxhDAAzd9Ejg#70_Moments_Videos" target="_blank" rel="noopener">Drop it in the shared folder</a>
+            Have a video or voice message? <a href="https://www.icloud.com/iclouddrive/0a1K4jBfrVoduOxhDAAzd9Ejg#70_Moments_Videos" target="_blank" rel="noopener">Upload it here</a> or just text it to Brian at (916) 396-2043.
           </p>
         </div>
 
