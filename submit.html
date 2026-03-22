@@ -344,7 +344,16 @@
 
         <div class="form-group">
           <label for="photo">Photo <span class="optional">(optional)</span></label>
-          <input type="file" id="photo" name="photo" accept="image/*">
+          <div class="file-input-wrapper">
+            <input type="file" id="photo" name="photo" accept="image/*">
+            <label for="photo" class="file-label" id="file-label-display">
+              <span class="file-icon">&#128247;</span>
+              <span class="file-text">
+                <strong>Choose a photo</strong>
+                <span>JPG, PNG, HEIC</span>
+              </span>
+            </label>
+          </div>
           <p class="video-note">
             Have a video or voice message? <a href="https://www.icloud.com/iclouddrive/0a1K4jBfrVoduOxhDAAzd9Ejg#70_Moments_Videos" target="_blank" rel="noopener">Upload it here</a> or just text it to Brian at (916) 396-2043.
           </p>
