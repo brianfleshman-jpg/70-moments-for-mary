@@ -3,14 +3,14 @@
     "number": 1,
     "name": "Your Family",
     "relationship": "",
-    "text": "Happy 70th Birthday, Mary! From the people who love you most \u2014 here are 70 moments just for you as we celebrate 70 incredible years. This one\u2019s all yours!",
+    "text": "Happy 70th Birthday, Mary! From the people who love you most \u2014 here are 70 moments just for you as we celebrate 70 incredible years.",
     "photo": "assets/photos/mary-larry-hero.jpeg",
     "video": null
   },
   {
     "number": 2,
     "name": "Brian, Heather, Penelope & Juliette",
-    "relationship": "Son & Family",
+    "relationship": "",
     "text": null,
     "photo": "assets/photos/DSCN1133.JPG",
     "video": null
@@ -18,7 +18,7 @@
   {
     "number": 3,
     "name": "Brian, Heather, Penelope & Juliette",
-    "relationship": "Son & Family",
+    "relationship": "",
     "text": null,
     "photo": "assets/photos/IMG_0502.jpeg",
     "video": null
@@ -26,7 +26,7 @@
   {
     "number": 4,
     "name": "Brian, Heather, Penelope & Juliette",
-    "relationship": "Son & Family",
+    "relationship": "",
     "text": null,
     "photo": "assets/photos/IMG_1067.JPG",
     "video": null
@@ -50,7 +50,7 @@
   {
     "number": 7,
     "name": "Brian, Heather, Penelope & Juliette",
-    "relationship": "Son & Family",
+    "relationship": "",
     "text": null,
     "photo": "assets/photos/IMG_20131205_0162.jpg",
     "video": null
@@ -66,7 +66,7 @@
   {
     "number": 9,
     "name": "Brian, Heather, Penelope & Juliette",
-    "relationship": "Son & Family",
+    "relationship": "",
     "text": null,
     "photo": "assets/photos/IMG_2585.jpeg",
     "video": null
@@ -74,7 +74,7 @@
   {
     "number": 10,
     "name": "Brian, Heather, Penelope & Juliette",
-    "relationship": "Son & Family",
+    "relationship": "",
     "text": null,
     "photo": "assets/photos/IMG_2686.JPG",
     "video": null
@@ -82,7 +82,7 @@
   {
     "number": 11,
     "name": "Brian, Heather, Penelope & Juliette",
-    "relationship": "Son & Family",
+    "relationship": "",
     "text": null,
     "photo": "assets/photos/IMG_2906.jpeg",
     "video": null
@@ -90,7 +90,7 @@
   {
     "number": 12,
     "name": "Brian, Heather, Penelope & Juliette",
-    "relationship": "Son & Family",
+    "relationship": "",
     "text": null,
     "photo": "assets/photos/IMG_3322.JPG",
     "video": null
@@ -98,7 +98,7 @@
   {
     "number": 13,
     "name": "Brian, Heather, Penelope & Juliette",
-    "relationship": "Son & Family",
+    "relationship": "",
     "text": null,
     "photo": "assets/photos/P1080612.JPG",
     "video": null
@@ -106,7 +106,7 @@
   {
     "number": 14,
     "name": "Brian, Heather, Penelope & Juliette",
-    "relationship": "Son & Family",
+    "relationship": "",
     "text": null,
     "photo": "assets/photos/P1080915.JPG",
     "video": null
