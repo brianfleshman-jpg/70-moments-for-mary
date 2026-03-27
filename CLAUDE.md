@@ -104,12 +104,25 @@ Open: `https://brianfleshman-jpg.github.io/70-moments-for-mary/?mode=tv`
 
 ---
 
-## Current Status (as of March 27, 2026)
+## Current Status (as of March 27, 2026 evening)
 
-- **2 submissions** in `moments.json`: Brian (with photo) and Joseph (text only)
+- **14 moments** in `moments.json`:
+  - Moment 1: Hero welcome card (Mary & Larry boat photo, intro text from "Your Family")
+  - Moments 2-4: Family photos (Brian, Heather, Penelope & Juliette) — photo only, no text
+  - Moment 5: Joseph (text submission, no photo)
+  - Moment 6: Maria Fernandez (text + photo submission from Formspree)
+  - Moment 7: Family photo
+  - Moment 8: Judy & Joe (text submission, no photo)
+  - Moments 9-14: More family photos
+- **3 real submissions** from Formspree (Joseph, Maria Fernandez, Judy & Joe)
+- **10 family photos** added manually by Brian, sprinkled between submissions
 - Brian's dad sent out a PDF with the submission link via text tonight
-- Party is Saturday March 29 — expect submissions to come in tonight and Friday
+- Party is Saturday March 29 — expect more submissions tonight and Friday
 - Run `./sync.sh` periodically to pull in new submissions
+
+### Important: Re-sprinkle After More Submissions
+
+When new submissions come in via `sync.sh`, they'll be appended to the end of `moments.json`. Brian may want to re-order and re-number entries to keep the family photos sprinkled evenly between submissions rather than clumped together. Just edit `moments.json` directly — the `number` field controls display order and the "Moment X of 70" label.
 
 ---
 
