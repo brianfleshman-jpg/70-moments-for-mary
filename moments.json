@@ -1,13 +1,5 @@
 [
   {
-    "number": 4,
-    "name": "Brian",
-    "relationship": "Son",
-    "text": "Hi Mom",
-    "photo": "assets/photos/brian-4.jpeg",
-    "video": null
-  },
-  {
     "number": 5,
     "name": "Joseph",
     "relationship": "My Aunt",
