@@ -687,7 +687,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', function () {
-      fetch('moments.json')
+      fetch('moments.json?v=' + Date.now())
         .then(function (res) {
           if (!res.ok) throw new Error('Failed to load moments.json (' + res.status + ')');
           return res.json();
