@@ -283,12 +283,12 @@ function renderGrid() {
       <div class="fields">
         <div class="moment-num">#${m.number}</div>
         <div class="filename">${filename}</div>
-        <label>Who's in this photo?</label>
-        <input type="text" placeholder="e.g. Mary & Larry, Brian's family"
+        <label>Name</label>
+        <input type="text" placeholder="e.g. Mary & Larry, Brian"
                value="${data.name.replace(/"/g, '&quot;')}"
                oninput="saveData(moments.find(x=>x.number===${m.number}), this.value, this.closest('.card').querySelector('textarea').value)">
-        <label>Caption / Message (optional)</label>
-        <textarea placeholder="Optional caption or message..."
+        <label>Caption</label>
+        <textarea placeholder="A message or description, e.g. Christmas 2024"
                   oninput="saveData(moments.find(x=>x.number===${m.number}), this.closest('.card').querySelector('input').value, this.value)">${data.text}</textarea>
         <div class="status-row">
           <span class="status ${labeled ? 'done' : 'pending'}">${labeled ? '✓ Labeled' : 'Needs label'}</span>
