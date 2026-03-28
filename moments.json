@@ -34,7 +34,7 @@
   {
     "number": 5,
     "name": "Joseph",
-    "relationship": "My Aunt",
+    "relationship": "",
     "text": "Circa early 1990\u2019s, you lovingly hosted us all in your home in Denver for Thanksgiving that included sledding, a pizza night & skiing. \u2764\ufe0f Happy Birthday! \u2764\ufe0f",
     "photo": null,
     "video": null
@@ -42,7 +42,7 @@
   {
     "number": 6,
     "name": "Maria Fernandez",
-    "relationship": "She is my sister in-law",
+    "relationship": "",
     "text": "I was six years old when Mary came into my life. Larry took her to his prom. I remember that day like it was yesterday - especially the two of them pulling away in the orange pinto! One of my most special memories was the first Christmas Mary spent with our family. The photo is not very clear but she made me a flannel night gown that was a light blue floral print. I literally wore it out - until there were holes and I could not wear it any more. I don't consider Mary an in-law, she is another one of my sisters.",
     "photo": "assets/photos/maria-fernandez-6.jpg",
     "video": null
@@ -58,7 +58,7 @@
   {
     "number": 8,
     "name": "Judy & Joe",
-    "relationship": "Sister-in-law",
+    "relationship": "",
     "text": "Mary, you have this special gift of knowing things of the heart. You create beautiful crafts with care, attention to detail and love, for those you love. Every piece is a treasure, just as you are treasured.",
     "photo": null,
     "video": null
@@ -114,7 +114,7 @@
   {
     "number": 15,
     "name": "Chris",
-    "relationship": "Mother in law",
+    "relationship": "",
     "text": "Happy Birthday! We are so grateful for everything you do, but especially for the love you pour into the grandkids. You are the heart of so many of our favorite family traditions. Cheers to 70 amazing years!",
     "photo": null,
     "video": null
@@ -122,17 +122,9 @@
   {
     "number": 16,
     "name": "Jerry",
-    "relationship": "School",
+    "relationship": "",
     "text": "Hi Mary,\r\nFrom having the same home room at Miller Junior High, going through high school at Lynbrook, and all of the good times after high school, our friendship has spanned 57 years!!\r\nI love ya Mary, and hope that you have a very special birthday!!",
     "photo": null,
-    "video": null
-  },
-  {
-    "number": 17,
-    "name": "Brian",
-    "relationship": "Son",
-    "text": "Hi Mom",
-    "photo": "assets/photos/brian-17.jpeg",
     "video": null
   }
 ]
