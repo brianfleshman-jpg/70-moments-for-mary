@@ -110,5 +110,29 @@
     "text": null,
     "photo": "assets/photos/P1080915.JPG",
     "video": null
+  },
+  {
+    "number": 15,
+    "name": "Chris",
+    "relationship": "Mother in law",
+    "text": "Happy Birthday! We are so grateful for everything you do, but especially for the love you pour into the grandkids. You are the heart of so many of our favorite family traditions. Cheers to 70 amazing years!",
+    "photo": null,
+    "video": null
+  },
+  {
+    "number": 16,
+    "name": "Jerry",
+    "relationship": "School",
+    "text": "Hi Mary,\r\nFrom having the same home room at Miller Junior High, going through high school at Lynbrook, and all of the good times after high school, our friendship has spanned 57 years!!\r\nI love ya Mary, and hope that you have a very special birthday!!",
+    "photo": null,
+    "video": null
+  },
+  {
+    "number": 17,
+    "name": "Brian",
+    "relationship": "Son",
+    "text": "Hi Mom",
+    "photo": "assets/photos/brian-17.jpeg",
+    "video": null
   }
 ]
