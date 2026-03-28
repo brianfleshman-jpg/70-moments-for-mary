@@ -734,5 +734,117 @@
     "text": null,
     "photo": null,
     "video": "assets/videos/Toni Message.mov"
+  },
+  {
+    "number": 93,
+    "name": "Mary & Larry",
+    "relationship": "",
+    "text": "Tripp's wedding, 2004",
+    "photo": "assets/photos/IMG_0014.JPG",
+    "video": null
+  },
+  {
+    "number": 94,
+    "name": "Mary & Tripp",
+    "relationship": "",
+    "text": "Mother-son dance, Tripp's wedding 2004",
+    "photo": "assets/photos/IMG_0096.JPG",
+    "video": null
+  },
+  {
+    "number": 95,
+    "name": "Nana & the grandkids",
+    "relationship": "",
+    "text": "River Cats game, Sacramento 2024",
+    "photo": "assets/photos/IMG_0976.HEIC",
+    "video": null
+  },
+  {
+    "number": 96,
+    "name": "Family dinner",
+    "relationship": "",
+    "text": "Thanksgiving gathering, 2018",
+    "photo": "assets/photos/IMG_1073.HEIC",
+    "video": null
+  },
+  {
+    "number": 97,
+    "name": "Nana & Zane",
+    "relationship": "",
+    "text": "Ferry ride, Giants game day 2023",
+    "photo": "assets/photos/IMG_2121.HEIC",
+    "video": null
+  },
+  {
+    "number": 98,
+    "name": "Nana & Charlotte",
+    "relationship": "",
+    "text": "Selfie, 2020",
+    "photo": "assets/photos/IMG_2136.HEIC",
+    "video": null
+  },
+  {
+    "number": 99,
+    "name": "Nana & Charlotte",
+    "relationship": "",
+    "text": "4th of July, 2017",
+    "photo": "assets/photos/IMG_2424.JPG",
+    "video": null
+  },
+  {
+    "number": 100,
+    "name": "Nana & Charlotte",
+    "relationship": "",
+    "text": "Couch cuddles, 2017",
+    "photo": "assets/photos/IMG_2805.JPG",
+    "video": null
+  },
+  {
+    "number": 101,
+    "name": "Family night out",
+    "relationship": "",
+    "text": "Downtown Sacramento, 2019",
+    "photo": "assets/photos/IMG_3309.HEIC",
+    "video": null
+  },
+  {
+    "number": 102,
+    "name": "Nana & Charlotte",
+    "relationship": "",
+    "text": "Mother's Day adventure, 2018",
+    "photo": "assets/photos/IMG_5443.HEIC",
+    "video": null
+  },
+  {
+    "number": 103,
+    "name": "Nana & Pop on the train",
+    "relationship": "",
+    "text": "Mother's Day outing, 2018",
+    "photo": "assets/photos/IMG_5452.HEIC",
+    "video": null
+  },
+  {
+    "number": 104,
+    "name": "Nana's birthday!",
+    "relationship": "",
+    "text": "Party hat & cake, 2021",
+    "photo": "assets/photos/IMG_5674.HEIC",
+    "video": null
+  },
+  {
+    "number": 105,
+    "name": "Happy birthday Nana!",
+    "relationship": "",
+    "text": "Blowing out candles with the grandkids, 2021",
+    "photo": "assets/photos/IMG_5677.HEIC",
+    "video": null
+  },
+  {
+    "number": 106,
+    "name": "Mary, Larry & Zane",
+    "relationship": "",
+    "text": "Dressed up, 2024",
+    "photo": "assets/photos/IMG_9732.HEIC",
+    "video": null
   }
 ]
