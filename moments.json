@@ -1,7 +1,7 @@
 [
   {
     "number": 1,
-    "name": "Your Family",
+    "name": "With Love from ALL of us!",
     "relationship": "",
     "text": "Happy 70th Birthday, Mary! From the people who love you most \u2014 here are 70 moments just for you as we celebrate 70 incredible years.",
     "photo": "assets/photos/mary-larry-hero.jpeg",
@@ -9,9 +9,9 @@
   },
   {
     "number": 2,
-    "name": "Brian, Heather, Penelope & Juliette",
+    "name": "Nana and Penelope",
     "relationship": "",
-    "text": null,
+    "text": "Nana with the perfect touch!",
     "photo": "assets/photos/DSCN1133.JPG",
     "video": null
   },
@@ -161,7 +161,7 @@
   },
   {
     "number": 21,
-    "name": "Noni, Pops & the grandkids",
+    "name": "Nana and Pop with the grandkids.",
     "relationship": "",
     "text": "Thanksgiving 2019",
     "photo": "assets/photos/DSC_2666_edited.jpg",
@@ -187,7 +187,7 @@
     "number": 24,
     "name": "Mary",
     "relationship": "",
-    "text": "Smiling in Las Vegas, 2014",
+    "text": "Smiling in Las Vegas - wedding ready, 2014",
     "photo": "assets/photos/H7kQn-z76qceyybnaqaa5pdipjt2dc.JPG",
     "video": null
   },
@@ -203,7 +203,7 @@
     "number": 26,
     "name": "Mary, Larry & Elisabeth",
     "relationship": "",
-    "text": "Napa wine country, 2018",
+    "text": "Napa Golf Tournament, 2018",
     "photo": "assets/photos/IMG_0166.jpeg",
     "video": null
   },
@@ -225,7 +225,7 @@
   },
   {
     "number": 29,
-    "name": "Nana & grandson",
+    "name": "Nana & Zane",
     "relationship": "",
     "text": "Snuggle time, Big Island 2022",
     "photo": "assets/photos/IMG_0478.jpeg",
@@ -265,7 +265,7 @@
   },
   {
     "number": 34,
-    "name": "Family in Kauai",
+    "name": "Fun times in Kauai",
     "relationship": "",
     "text": "Oceanside, Kauai 2018",
     "photo": "assets/photos/IMG_0654.jpeg",
@@ -273,9 +273,9 @@
   },
   {
     "number": 35,
-    "name": "Mary & Larry",
+    "name": "Mary & Brian",
     "relationship": "",
-    "text": "Helicopter ride, Kauai 2018",
+    "text": "Kauai 2018",
     "photo": "assets/photos/IMG_0676.heic",
     "video": null
   },
@@ -337,9 +337,9 @@
   },
   {
     "number": 43,
-    "name": "Nanna and Enzo",
+    "name": "Enzo",
     "relationship": "",
-    "text": null,
+    "text": "Nana and Enzo!",
     "photo": "assets/photos/IMG_1403.jpeg",
     "video": null
   },
@@ -347,13 +347,13 @@
     "number": 44,
     "name": "Mary & Larry",
     "relationship": "",
-    "text": "Summer outing, 2023",
+    "text": "Ryder Cup 2023",
     "photo": "assets/photos/IMG_1428.jpeg",
     "video": null
   },
   {
     "number": 45,
-    "name": "The old days",
+    "name": "The good old days",
     "relationship": "",
     "text": "Friends on the couch, 1980s",
     "photo": "assets/photos/IMG_1520.jpeg",
@@ -387,7 +387,7 @@
     "number": 49,
     "name": "Nana & the girls",
     "relationship": "",
-    "text": "Shave ice in Hawaii",
+    "text": "Yummy breakfast in Hawaii",
     "photo": "assets/photos/IMG_1683.jpeg",
     "video": null
   },
@@ -401,7 +401,7 @@
   },
   {
     "number": 51,
-    "name": "Nana & grandson",
+    "name": "Nana & Zane",
     "relationship": "",
     "text": "Ferry ride, Giants game day 2023",
     "photo": "assets/photos/IMG_2121.jpeg",
@@ -427,7 +427,7 @@
     "number": 54,
     "name": "The Fleshman family",
     "relationship": "",
-    "text": "Formal family portrait, early '90s",
+    "text": "Toni's Wedding",
     "photo": "assets/photos/IMG_2407.jpeg",
     "video": null
   },
@@ -451,7 +451,7 @@
     "number": 57,
     "name": "Mary & Larry",
     "relationship": "",
-    "text": "Cape Cod garden",
+    "text": "Nantucket",
     "photo": "assets/photos/IMG_2428.jpeg",
     "video": null
   },
@@ -491,7 +491,7 @@
     "number": 62,
     "name": "Family at the ballpark",
     "relationship": "",
-    "text": "Giants game, early '90s",
+    "text": "Giants game, Scottsdale, early '90s",
     "photo": "assets/photos/IMG_2735.JPG",
     "video": null
   },
@@ -507,7 +507,7 @@
     "number": 64,
     "name": "The kids at the ballpark",
     "relationship": "",
-    "text": "Baseball game, early '90s",
+    "text": "Baseball game, Dodger Stadium",
     "photo": "assets/photos/IMG_3121.JPG",
     "video": null
   },
@@ -523,15 +523,15 @@
     "number": 66,
     "name": "Young Mary",
     "relationship": "",
-    "text": "Behind the wheel, early '80s",
+    "text": "Behind the wheel!",
     "photo": "assets/photos/IMG_3249.jpeg",
     "video": null
   },
   {
     "number": 67,
-    "name": "Mary & friends",
+    "name": "Judy, TOni, and Mary",
     "relationship": "",
-    "text": "VW Beetle days, 1970s",
+    "text": "Herbie days, 1970s",
     "photo": "assets/photos/IMG_3250.jpeg",
     "video": null
   },
@@ -545,7 +545,7 @@
   },
   {
     "number": 69,
-    "name": "Nana & grandson",
+    "name": "Nana & Enzo",
     "relationship": "",
     "text": "Silly faces, 2024",
     "photo": "assets/photos/IMG_3279.jpeg",
@@ -561,9 +561,9 @@
   },
   {
     "number": 71,
-    "name": "Nana & newborn",
+    "name": "Nana & Luca",
     "relationship": "",
-    "text": "First time holding baby, 2016",
+    "text": "First time holding Luca, 2016",
     "photo": "assets/photos/IMG_3489.jpeg",
     "video": null
   },
@@ -585,7 +585,7 @@
   },
   {
     "number": 74,
-    "name": "Nana & the grandkids",
+    "name": "Nana with Zane and Penelope",
     "relationship": "",
     "text": "Birthday cake time, 2011",
     "photo": "assets/photos/IMG_3962.jpg",
@@ -595,7 +595,7 @@
     "number": 75,
     "name": "Family outing",
     "relationship": "",
-    "text": "Mary, Larry & family, 2019",
+    "text": "Mary, Larry & Elisabeth",
     "photo": "assets/photos/IMG_4030.jpeg",
     "video": null
   },
@@ -753,7 +753,7 @@
   },
   {
     "number": 95,
-    "name": "Nana & the grandkids",
+    "name": "Nana, Pop, and some of the grandkids",
     "relationship": "",
     "text": "River Cats game, Sacramento 2024",
     "photo": "assets/photos/IMG_0976.HEIC",
@@ -761,9 +761,9 @@
   },
   {
     "number": 96,
-    "name": "Family dinner",
+    "name": "Family Tradition!",
     "relationship": "",
-    "text": "Thanksgiving gathering, 2018",
+    "text": "One of our favorite Family Traditions, started by Mom!",
     "photo": "assets/photos/IMG_1073.HEIC",
     "video": null
   },
@@ -809,7 +809,7 @@
   },
   {
     "number": 102,
-    "name": "Nana & Charlotte",
+    "name": "Mary & Tripp",
     "relationship": "",
     "text": "Mother's Day adventure, 2018",
     "photo": "assets/photos/IMG_5443.HEIC",
@@ -817,7 +817,7 @@
   },
   {
     "number": 103,
-    "name": "Nana & Pop on the train",
+    "name": "Nana & Tripp on the train",
     "relationship": "",
     "text": "Mother's Day outing, 2018",
     "photo": "assets/photos/IMG_5452.HEIC",
@@ -843,7 +843,7 @@
     "number": 106,
     "name": "Mary, Larry & Zane",
     "relationship": "",
-    "text": "Dressed up, 2024",
+    "text": "Zane's 8th Grade Graduation, 2024",
     "photo": "assets/photos/IMG_9732.HEIC",
     "video": null
   },
