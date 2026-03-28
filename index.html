@@ -494,7 +494,7 @@
         textWrap.className = 'tv-slide-text-only';
         textWrap.innerHTML =
           '<div class="tv-slide-text">"' + escapeHtml(moment.text) + '"</div>' +
-          '<div class="tv-slide-author">— ' + escapeHtml(moment.name) + ', ' + escapeHtml(moment.relationship) + '</div>';
+          '<div class="tv-slide-author">— ' + escapeHtml(moment.name) + '</div>';
         slide.appendChild(textWrap);
       }
 
@@ -648,7 +648,7 @@
         mediaWrap.className = 'card-media';
         const img = document.createElement('img');
         img.src = moment.photo;
-        img.alt = moment.name + ' — ' + moment.relationship;
+        img.alt = moment.name;
         img.loading = 'lazy';
         mediaWrap.appendChild(img);
         card.appendChild(mediaWrap);
@@ -672,15 +672,6 @@
       nameEl.className = 'card-name';
       nameEl.textContent = moment.name;
       nameRelWrap.appendChild(nameEl);
-
-      if (moment.relationship) {
-        const sep = document.createTextNode(' · ');
-        nameRelWrap.appendChild(sep);
-        const relEl = document.createElement('span');
-        relEl.className = 'card-relationship';
-        relEl.textContent = moment.relationship;
-        nameRelWrap.appendChild(relEl);
-      }
 
       attribution.appendChild(nameRelWrap);
 
