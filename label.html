@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Label Photos — Mary's 70th</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #1a1a2e; color: #eee; padding: 20px; }
+  h1 { text-align: center; margin-bottom: 10px; color: #f5c6d0; font-size: 28px; }
+  .subtitle { text-align: center; color: #aaa; margin-bottom: 20px; font-size: 14px; }
+  .progress { text-align: center; margin-bottom: 8px; font-size: 16px; color: #f5c6d0; }
+  .tracker { text-align: center; margin-bottom: 8px; padding: 12px 20px; background: #16213e; border-radius: 12px; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .tracker .target-num { font-size: 36px; font-weight: 700; background: linear-gradient(135deg, #af52de, #ff2d55, #ff9500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+  .tracker .target-label { font-size: 13px; color: #888; margin-bottom: 8px; }
+  .tracker .bar-wrap { background: #0f3460; border-radius: 10px; height: 20px; overflow: hidden; margin: 8px 0; position: relative; }
+  .tracker .bar-fill { height: 100%; border-radius: 10px; transition: width 0.3s ease; }
+  .tracker .bar-fill.under { background: linear-gradient(90deg, #4ecca3, #38b2ac); }
+  .tracker .bar-fill.over { background: linear-gradient(90deg, #ff9500, #ff2d55); }
+  .tracker .bar-fill.perfect { background: linear-gradient(90deg, #4ecca3, #af52de); }
+  .tracker .stats { display: flex; justify-content: space-around; gap: 12px; margin-top: 8px; }
+  .tracker .stat { text-align: center; }
+  .tracker .stat-num { font-size: 20px; font-weight: 700; color: #eee; }
+  .tracker .stat-label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+  .tracker .action-msg { margin-top: 8px; font-size: 14px; font-weight: 600; padding: 6px 12px; border-radius: 8px; display: inline-block; }
+  .tracker .action-msg.perfect { background: #4ecca3; color: #1a1a2e; }
+  .tracker .action-msg.remove-more { background: #ff9500; color: #1a1a2e; }
+  .tracker .action-msg.need-more { background: #38b2ac; color: #1a1a2e; }
+  .controls { text-align: center; margin-bottom: 20px; }
+  .controls button { background: #f5c6d0; color: #1a1a2e; border: none; padding: 10px 24px; border-radius: 8px; font-size: 16px; cursor: pointer; margin: 0 8px; font-weight: 600; }
+  .controls button:hover { background: #f0a0b0; }
+  .filter-bar { text-align: center; margin-bottom: 20px; }
+  .filter-bar button { background: #333; color: #eee; border: 1px solid #555; padding: 6px 16px; border-radius: 20px; cursor: pointer; margin: 0 4px; font-size: 13px; }
+  .filter-bar button.active { background: #f5c6d0; color: #1a1a2e; border-color: #f5c6d0; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; max-width: 1400px; margin: 0 auto; }
+  .card { background: #16213e; border-radius: 12px; overflow: hidden; border: 2px solid transparent; transition: border-color 0.2s; }
+  .card.labeled { border-color: #4ecca3; }
+  .card.unlabeled { border-color: #555; }
+  .card img, .card video { width: 100%; height: 260px; object-fit: cover; display: block; cursor: pointer; }
+  .card .fields { padding: 12px; }
+  .card .moment-num { font-size: 12px; color: #888; margin-bottom: 6px; }
+  .card .filename { font-size: 11px; color: #666; margin-bottom: 8px; word-break: break-all; }
+  .card label { display: block; font-size: 12px; color: #aaa; margin-bottom: 3px; margin-top: 8px; }
+  .card input, .card textarea { width: 100%; padding: 8px 10px; border-radius: 6px; border: 1px solid #333; background: #0f3460; color: #eee; font-size: 14px; font-family: inherit; }
+  .card textarea { height: 60px; resize: vertical; }
+  .card input:focus, .card textarea:focus { outline: none; border-color: #f5c6d0; }
+  .card .status { font-size: 11px; margin-top: 6px; padding: 3px 8px; border-radius: 10px; display: inline-block; }
+  .card .status.done { background: #4ecca3; color: #1a1a2e; }
+  .card .status.pending { background: #555; color: #ccc; }
+  .card .remove-btn { background: #ff4455; color: #fff; border: none; padding: 4px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; margin-left: 8px; font-weight: 600; }
+  .card .remove-btn:hover { background: #cc3344; }
+  .card.removed { opacity: 0.3; pointer-events: none; border-color: #ff4455; }
+  .card .undo-btn { background: #f5c6d0; color: #1a1a2e; border: none; padding: 4px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; margin-left: 8px; font-weight: 600; pointer-events: auto; }
+  .card .status-row { display: flex; align-items: center; margin-top: 6px; flex-wrap: wrap; gap: 4px; }
+  .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; justify-content: center; align-items: center; cursor: pointer; }
+  .modal.open { display: flex; }
+  .modal img, .modal video { max-width: 90%; max-height: 90%; object-fit: contain; }
+  #output-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 2000; justify-content: center; align-items: center; }
+  #output-modal.open { display: flex; }
+  #output-modal .content { background: #16213e; padding: 24px; border-radius: 12px; max-width: 800px; width: 90%; max-height: 80vh; overflow-y: auto; }
+  #output-modal textarea { width: 100%; height: 400px; background: #0f3460; color: #eee; border: 1px solid #333; border-radius: 8px; padding: 12px; font-family: monospace; font-size: 13px; }
+  #output-modal button { margin-top: 12px; background: #f5c6d0; color: #1a1a2e; border: none; padding: 10px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; margin-right: 8px; }
+</style>
+</head>
+<body>
+
+<h1>🎂 Label Photos for Mary's 70th</h1>
+<p class="subtitle">Enter a name and optional message for each photo. Data saves automatically in your browser.</p>
+<div class="tracker" id="tracker"></div>
+<div class="progress" id="progress"></div>
+
+<div class="filter-bar">
+  <button class="active" onclick="setFilter('all')">All</button>
+  <button onclick="setFilter('unlabeled')">Unlabeled</button>
+  <button onclick="setFilter('labeled')">Labeled</button>
+  <button onclick="setFilter('removed')">Removed</button>
+</div>
+
+<div class="controls">
+  <button onclick="exportJSON()">📋 Export JSON</button>
+  <button onclick="clearAll()">🗑 Clear All Labels</button>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<div class="modal" id="preview-modal" onclick="closePreview()">
+  <img id="preview-img" src="">
+</div>
+
+<div id="output-modal">
+  <div class="content">
+    <h2 style="margin-bottom:12px; color:#f5c6d0;">Export — Copy & paste this to Claude</h2>
+    <textarea id="output-text" readonly></textarea>
+    <button onclick="copyOutput()">📋 Copy to Clipboard</button>
+    <button onclick="document.getElementById('output-modal').classList.remove('open')" style="background:#555; color:#eee;">Close</button>
+  </div>
+</div>
+
+<script>
+// Load moments.json
+let moments = [];
+let currentFilter = 'all';
+
+async function init() {
+  const resp = await fetch('moments.json');
+  moments = await resp.json();
+
+  // Only show entries that have a photo or video and need labeling (the new ones with empty name)
+  // Also show ones that already have names for editing
+  renderGrid();
+  updateProgress();
+}
+
+function getStorageKey(moment) {
+  const file = moment.photo || moment.video || '';
+  return 'label_' + moment.number + '_' + file;
+}
+
+function getSavedData(moment) {
+  const key = getStorageKey(moment);
+  const saved = localStorage.getItem(key);
+  return saved ? JSON.parse(saved) : { name: moment.name || '', text: moment.text || '' };
+}
+
+function saveData(moment, name, text) {
+  const key = getStorageKey(moment);
+  localStorage.setItem(key, JSON.stringify({ name, text }));
+  updateProgress();
+  updateCardStatus(moment.number);
+}
+
+function isLabeled(moment) {
+  const data = getSavedData(moment);
+  return data.name.trim() !== '';
+}
+
+function isRemoved(moment) {
+  return localStorage.getItem('removed_' + moment.number) === 'true';
+}
+
+function toggleRemove(num) {
+  const moment = moments.find(m => m.number === num);
+  if (!moment) return;
+  const removed = isRemoved(moment);
+  if (removed) {
+    localStorage.removeItem('removed_' + num);
+  } else {
+    localStorage.setItem('removed_' + num, 'true');
+  }
+  const card = document.querySelector(`[data-num="${num}"]`);
+  if (card) {
+    card.classList.toggle('removed', !removed);
+    const btnContainer = card.querySelector('.status-row');
+    if (btnContainer) {
+      const btn = btnContainer.querySelector('.remove-btn, .undo-btn');
+      if (btn) {
+        btn.className = removed ? 'remove-btn' : 'undo-btn';
+        btn.textContent = removed ? '✕ Remove' : '↩ Undo';
+        btn.setAttribute('onclick', `toggleRemove(${num})`);
+      }
+    }
+  }
+  updateProgress();
+  // Apply current filter
+  if (currentFilter !== 'all') setFilterDirect(currentFilter);
+}
+
+const TARGET = 70;
+
+function updateProgress() {
+  const allMoments = moments;
+  const photoMoments = allMoments.filter(m => m.photo || m.video);
+  const textOnlyMoments = allMoments.filter(m => !m.photo && !m.video);
+  const activePhotos = photoMoments.filter(m => !isRemoved(m));
+  const labeled = activePhotos.filter(m => isLabeled(m)).length;
+  const removed = photoMoments.filter(m => isRemoved(m)).length;
+
+  // Total keeping = active photos/videos + text-only submissions
+  const totalKeeping = activePhotos.length + textOnlyMoments.length;
+  const diff = totalKeeping - TARGET;
+
+  // Progress bar
+  const pct = Math.min((totalKeeping / TARGET) * 100, 100);
+  let barClass = 'under';
+  if (totalKeeping === TARGET) barClass = 'perfect';
+  else if (totalKeeping > TARGET) barClass = 'over';
+
+  // Action message
+  let actionHTML = '';
+  if (diff === 0) {
+    actionHTML = '<div class="action-msg perfect">🎯 Perfect! You\'re at exactly 70!</div>';
+  } else if (diff > 0) {
+    actionHTML = `<div class="action-msg remove-more">Remove ${diff} more to hit 70</div>`;
+  } else {
+    actionHTML = `<div class="action-msg need-more">Need ${Math.abs(diff)} more to reach 70</div>`;
+  }
+
+  document.getElementById('tracker').innerHTML = `
+    <div class="target-label">TARGET</div>
+    <div class="target-num">${totalKeeping} / ${TARGET}</div>
+    <div class="bar-wrap">
+      <div class="bar-fill ${barClass}" style="width: ${pct}%"></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-num">${activePhotos.length}</div><div class="stat-label">Photos/Videos</div></div>
+      <div class="stat"><div class="stat-num">${textOnlyMoments.length}</div><div class="stat-label">Messages</div></div>
+      <div class="stat"><div class="stat-num">${labeled}</div><div class="stat-label">Labeled</div></div>
+      <div class="stat"><div class="stat-num">${removed}</div><div class="stat-label">Removed</div></div>
+    </div>
+    ${actionHTML}
+  `;
+
+  document.getElementById('progress').textContent = `${labeled} / ${activePhotos.length} photos labeled` + (removed ? ` · ${removed} removed` : '');
+}
+
+function updateCardStatus(num) {
+  const card = document.querySelector(`[data-num="${num}"]`);
+  if (!card) return;
+  const moment = moments.find(m => m.number === num);
+  const labeled = isLabeled(moment);
+  card.classList.toggle('labeled', labeled);
+  card.classList.toggle('unlabeled', !labeled);
+  const statusEl = card.querySelector('.status');
+  if (statusEl) {
+    statusEl.className = 'status ' + (labeled ? 'done' : 'pending');
+    statusEl.textContent = labeled ? '✓ Labeled' : 'Needs label';
+  }
+
+  // Apply filter visibility
+  if (currentFilter === 'labeled' && !labeled) card.style.display = 'none';
+  if (currentFilter === 'unlabeled' && labeled) card.style.display = 'none';
+}
+
+function setFilter(filter) {
+  currentFilter = filter;
+  document.querySelectorAll('.filter-bar button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  setFilterDirect(filter);
+}
+
+function setFilterDirect(filter) {
+  document.querySelectorAll('.card').forEach(card => {
+    const num = parseInt(card.dataset.num);
+    const moment = moments.find(m => m.number === num);
+    if (!moment) return;
+    const labeled = isLabeled(moment);
+    const removed = isRemoved(moment);
+
+    if (filter === 'all') card.style.display = removed ? 'none' : '';
+    else if (filter === 'labeled') card.style.display = (labeled && !removed) ? '' : 'none';
+    else if (filter === 'unlabeled') card.style.display = (!labeled && !removed) ? '' : 'none';
+    else if (filter === 'removed') card.style.display = removed ? '' : 'none';
+  });
+}
+
+function renderGrid() {
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+
+  const photoMoments = moments.filter(m => m.photo || m.video);
+
+  photoMoments.forEach(m => {
+    const data = getSavedData(m);
+    const labeled = data.name.trim() !== '';
+    const file = m.photo || m.video;
+    const filename = file ? file.split('/').pop() : '';
+    const isVideo = m.video != null;
+
+    const card = document.createElement('div');
+    const removed = isRemoved(m);
+    card.className = `card ${removed ? 'removed' : (labeled ? 'labeled' : 'unlabeled')}`;
+    card.dataset.num = m.number;
+
+    let mediaHTML;
+    if (isVideo) {
+      mediaHTML = `<video src="${file}" onclick="openPreview('${file}', true)" preload="metadata"></video>`;
+    } else {
+      mediaHTML = `<img src="${file}" loading="lazy" onclick="openPreview('${file}', false)" onerror="this.style.background='#333'; this.alt='Could not load'">`;
+    }
+
+    card.innerHTML = `
+      ${mediaHTML}
+      <div class="fields">
+        <div class="moment-num">#${m.number}</div>
+        <div class="filename">${filename}</div>
+        <label>Who's in this photo?</label>
+        <input type="text" placeholder="e.g. Mary & Larry, Brian's family"
+               value="${data.name.replace(/"/g, '&quot;')}"
+               oninput="saveData(moments.find(x=>x.number===${m.number}), this.value, this.closest('.card').querySelector('textarea').value)">
+        <label>Caption / Message (optional)</label>
+        <textarea placeholder="Optional caption or message..."
+                  oninput="saveData(moments.find(x=>x.number===${m.number}), this.closest('.card').querySelector('input').value, this.value)">${data.text}</textarea>
+        <div class="status-row">
+          <span class="status ${labeled ? 'done' : 'pending'}">${labeled ? '✓ Labeled' : 'Needs label'}</span>
+          <button class="${isRemoved(m) ? 'undo-btn' : 'remove-btn'}" onclick="toggleRemove(${m.number})">${isRemoved(m) ? '↩ Undo' : '✕ Remove'}</button>
+        </div>
+      </div>
+    `;
+
+    grid.appendChild(card);
+  });
+}
+
+function openPreview(src, isVideo) {
+  const modal = document.getElementById('preview-modal');
+  const img = document.getElementById('preview-img');
+  if (isVideo) {
+    img.outerHTML = `<video id="preview-img" src="${src}" controls autoplay style="max-width:90%;max-height:90%;"></video>`;
+  } else {
+    if (document.getElementById('preview-img').tagName === 'VIDEO') {
+      document.getElementById('preview-img').outerHTML = `<img id="preview-img" src="${src}">`;
+    } else {
+      img.src = src;
+    }
+  }
+  modal.classList.add('open');
+}
+
+function closePreview() {
+  const modal = document.getElementById('preview-modal');
+  modal.classList.remove('open');
+  const vid = modal.querySelector('video');
+  if (vid) vid.pause();
+}
+
+function exportJSON() {
+  const photoMoments = moments.filter(m => m.photo || m.video);
+  const results = [];
+
+  photoMoments.forEach(m => {
+    if (isRemoved(m)) return;
+    const data = getSavedData(m);
+    if (data.name.trim()) {
+      results.push({
+        number: m.number,
+        file: (m.photo || m.video || '').split('/').pop(),
+        name: data.name.trim(),
+        text: data.text.trim() || null
+      });
+    }
+  });
+
+  const text = JSON.stringify(results, null, 2);
+  document.getElementById('output-text').value = text;
+  document.getElementById('output-modal').classList.add('open');
+}
+
+function copyOutput() {
+  const textarea = document.getElementById('output-text');
+  textarea.select();
+  document.execCommand('copy');
+  alert('Copied to clipboard!');
+}
+
+function clearAll() {
+  if (!confirm('Clear ALL labels? This cannot be undone.')) return;
+  const photoMoments = moments.filter(m => m.photo || m.video);
+  photoMoments.forEach(m => {
+    localStorage.removeItem(getStorageKey(m));
+  });
+  renderGrid();
+  updateProgress();
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closePreview();
+    document.getElementById('output-modal').classList.remove('open');
+  }
+});
+
+init();
+</script>
+</body>
+</html>
