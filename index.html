@@ -299,18 +299,21 @@
     /* Text-only slide */
     .tv-slide-text-only {
       text-align: center;
-      padding: 48px;
-      max-width: 800px;
+      padding: 40px 60px;
+      max-width: 90%;
+      max-height: 90%;
+      overflow-y: auto;
     }
 
     .tv-slide-text-only .tv-slide-text {
-      font-size: 36px;
+      font-size: clamp(18px, 3vw, 36px);
       max-width: none;
+      line-height: 1.5;
     }
 
     .tv-slide-text-only .tv-slide-author {
-      font-size: 21px;
-      margin-top: 24px;
+      font-size: clamp(16px, 2vw, 21px);
+      margin-top: 16px;
     }
 
     /* Video slide */
