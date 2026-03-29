@@ -25,7 +25,7 @@
   },
   {
     "number": 4,
-    "name": "Family dog",
+    "name": "Cisco",
     "relationship": "",
     "text": "Pool day, 1999",
     "photo": "assets/photos/IMG_2425.jpeg",
@@ -49,7 +49,7 @@
   },
   {
     "number": 7,
-    "name": "Mary",
+    "name": "Larry",
     "relationship": "",
     "text": "Dinner in Florence, Italy 2023",
     "photo": "assets/photos/IMG_2623.jpeg",
@@ -57,7 +57,7 @@
   },
   {
     "number": 8,
-    "name": "Mary",
+    "name": "Elisabeth",
     "relationship": "",
     "text": "Smiling in Las Vegas - wedding ready, 2014",
     "photo": "assets/photos/H7kQn-z76qceyybnaqaa5pdipjt2dc.JPG",
@@ -73,7 +73,7 @@
   },
   {
     "number": 10,
-    "name": "Mary, Larry & grandson",
+    "name": "Tripp, Mandy, Zane & Charlotte",
     "relationship": "",
     "text": "Road trip, 2021",
     "photo": "assets/photos/4148C645-AD98-46C1-A8B4-0DC9A21C4BBE.jpeg",
@@ -97,7 +97,7 @@
   },
   {
     "number": 13,
-    "name": "What I love about Nana.",
+    "name": "Luca",
     "relationship": "",
     "text": "She is always super nice to me. \n\nShe makes me happy when I see her.\n\nWhen we went to Hawaii with her and I loved how I got to spend a lot of time with her. \n\nWe saw whales and a volcano and she even went swimming in the freezing cold pool with me. \n\nShe likes doing crafts with me, my favorite is when we do Christmas and Thanksgiving ones.\n\nThese are the reasons I love my Nana. \n\nLove Luca",
     "photo": "assets/photos/fleshman fam 2023 print-17.JPG",
@@ -105,7 +105,7 @@
   },
   {
     "number": 14,
-    "name": "Brian, Heather, Penelope & Juliette",
+    "name": "Penelope and Juliette",
     "relationship": "",
     "text": null,
     "photo": "assets/photos/IMG_3322.JPG",
@@ -145,7 +145,7 @@
   },
   {
     "number": 19,
-    "name": "Brian, Heather, Penelope & Juliette",
+    "name": "Penelope",
     "relationship": "",
     "text": null,
     "photo": "assets/photos/P1080915.JPG",
@@ -177,7 +177,7 @@
   },
   {
     "number": 23,
-    "name": "Kauai",
+    "name": "Kauai 2018",
     "relationship": "",
     "text": null,
     "photo": "assets/photos/P1080612.JPG",
@@ -265,7 +265,7 @@
   },
   {
     "number": 34,
-    "name": "Larry & newborn",
+    "name": "Nana moment",
     "relationship": "",
     "text": "Meeting the newest grandchild, 2022",
     "photo": "assets/photos/67833588373__DAA1884E-A8AF-4C09-805E-84783DC236EA.jpeg",
@@ -275,7 +275,7 @@
     "number": 35,
     "name": "Mary & Brian",
     "relationship": "",
-    "text": "Vineyard visit, 2023",
+    "text": "Kauai 2018",
     "photo": "assets/photos/IMG_1682.PNG",
     "video": null
   },
@@ -313,7 +313,7 @@
   },
   {
     "number": 40,
-    "name": "Mary, Heather & grandson",
+    "name": "Mary, Elisabeth & Luca",
     "relationship": "",
     "text": "Napa, 2021",
     "photo": "assets/photos/IMG_3153.jpeg",
@@ -337,7 +337,7 @@
   },
   {
     "number": 43,
-    "name": "Brian, Heather, Penelope & Juliette",
+    "name": "Penelope and Juliette",
     "relationship": "",
     "text": null,
     "photo": "assets/photos/IMG_1067.JPG",
@@ -457,7 +457,7 @@
   },
   {
     "number": 58,
-    "name": "Mary",
+    "name": "Larry",
     "relationship": "",
     "text": "All dressed up, 2023",
     "photo": "assets/photos/IMG_2701.jpeg",
@@ -465,7 +465,7 @@
   },
   {
     "number": 59,
-    "name": "Mary",
+    "name": "Larry",
     "relationship": "",
     "text": "Sailing in Kona, Hawaii 2022",
     "photo": "assets/photos/IMG_0415.jpeg",
@@ -505,7 +505,7 @@
   },
   {
     "number": 64,
-    "name": "Mary",
+    "name": "Larry",
     "relationship": "",
     "text": "Oceanside at Pismo Beach, 2019",
     "photo": "assets/photos/IMG_1604.jpeg",
@@ -521,14 +521,6 @@
   },
   {
     "number": 66,
-    "name": "Family in matching shirts",
-    "relationship": "",
-    "text": "Family reunion, 2021",
-    "photo": "assets/photos/IMG_2916.JPG",
-    "video": null
-  },
-  {
-    "number": 67,
     "name": "Nana & Zane",
     "relationship": "",
     "text": "Snuggle time, Big Island 2022",
@@ -536,15 +528,15 @@
     "video": null
   },
   {
-    "number": 68,
-    "name": "Mary",
+    "number": 67,
+    "name": "Larry",
     "relationship": "",
     "text": "Dinner in Rome, Italy 2023",
     "photo": "assets/photos/IMG_2409.jpeg",
     "video": null
   },
   {
-    "number": 69,
+    "number": 68,
     "name": "Mary & Larry",
     "relationship": "",
     "text": "Ryder Cup 2023",
@@ -552,7 +544,7 @@
     "video": null
   },
   {
-    "number": 70,
+    "number": 69,
     "name": "Mary",
     "relationship": "",
     "text": "Waipio Valley lookout, Big Island 2022",
@@ -560,7 +552,7 @@
     "video": null
   },
   {
-    "number": 71,
+    "number": 70,
     "name": "Jerry",
     "relationship": "",
     "text": "Hi Mary,\r\nFrom having the same home room at Miller Junior High, going through high school at Lynbrook, and all of the good times after high school, our friendship has spanned 57 years!!\r\nI love ya Mary, and hope that you have a very special birthday!!",
@@ -568,7 +560,7 @@
     "video": null
   },
   {
-    "number": 72,
+    "number": 71,
     "name": "Mary & Brian",
     "relationship": "",
     "text": "Kauai 2018",
@@ -576,23 +568,23 @@
     "video": null
   },
   {
-    "number": 73,
-    "name": "Mary",
+    "number": 72,
+    "name": "Larry",
     "relationship": "",
     "text": "Breakfast smile, 2017",
     "photo": "assets/photos/IMG_4262.JPG",
     "video": null
   },
   {
-    "number": 74,
-    "name": "Mary",
+    "number": 73,
+    "name": "Larry",
     "relationship": "",
     "text": "Coastal walk, Mendocino 2023",
     "photo": "assets/photos/IMG_1695.jpeg",
     "video": null
   },
   {
-    "number": 75,
+    "number": 74,
     "name": "Nana & Zane",
     "relationship": "",
     "text": "Ferry ride, Giants game day 2023",
@@ -600,7 +592,7 @@
     "video": null
   },
   {
-    "number": 76,
+    "number": 75,
     "name": "Family outing",
     "relationship": "",
     "text": "Mary, Larry & Elisabeth",
@@ -608,7 +600,7 @@
     "video": null
   },
   {
-    "number": 77,
+    "number": 76,
     "name": "Elisabeth's graduation",
     "relationship": "",
     "text": "UNLV, Las Vegas 2014",
@@ -616,7 +608,7 @@
     "video": null
   },
   {
-    "number": 78,
+    "number": 77,
     "name": "Mary & Tripp",
     "relationship": "",
     "text": "Mother's Day adventure, 2018",
@@ -624,7 +616,7 @@
     "video": null
   },
   {
-    "number": 79,
+    "number": 78,
     "name": "Nana in her element",
     "relationship": "",
     "text": "Quiet afternoon with a book, Salinas 2023",
@@ -632,7 +624,7 @@
     "video": null
   },
   {
-    "number": 80,
+    "number": 79,
     "name": "Mary",
     "relationship": "",
     "text": "Birthday cake, 2017",
@@ -640,7 +632,7 @@
     "video": null
   },
   {
-    "number": 81,
+    "number": 80,
     "name": "Juliette",
     "relationship": "",
     "text": "Nana, I hope you have a great birthday. You are the best grandmother that someone could ever ask for, and I love you so much. My favorite memories with you were when my Mom was recovering from surgery, and you were with me helping with my book report. I also loved spending the summers in Lincoln with you. I love you.\ud83d\udc95",
@@ -648,7 +640,7 @@
     "video": null
   },
   {
-    "number": 82,
+    "number": 81,
     "name": "Young Mary",
     "relationship": "",
     "text": "Behind the wheel!",
@@ -656,15 +648,15 @@
     "video": null
   },
   {
-    "number": 83,
-    "name": "Judy, TOni, and Mary",
+    "number": 82,
+    "name": "Toni",
     "relationship": "",
     "text": "Herbie days, 1970s",
     "photo": "assets/photos/IMG_3250.jpeg",
     "video": null
   },
   {
-    "number": 84,
+    "number": 83,
     "name": "Hanging out with Nana and Pop",
     "relationship": "",
     "text": "Cozy on the couch, 2020",
@@ -672,15 +664,15 @@
     "video": null
   },
   {
-    "number": 85,
-    "name": "Mary",
+    "number": 84,
+    "name": "Larry",
     "relationship": "",
     "text": "Road trip vibes, 1980s",
     "photo": "assets/photos/IMG_3864.jpg",
     "video": null
   },
   {
-    "number": 86,
+    "number": 85,
     "name": "Brian, Heather, Penelope & Juliette",
     "relationship": "",
     "text": null,
@@ -688,7 +680,7 @@
     "video": null
   },
   {
-    "number": 87,
+    "number": 86,
     "name": "Time with Kurt and Robyn",
     "relationship": "",
     "text": "Highland Park",
@@ -696,7 +688,7 @@
     "video": null
   },
   {
-    "number": 88,
+    "number": 87,
     "name": "Nana & the grandkids",
     "relationship": "",
     "text": "Play-Doh time, 2016",
@@ -704,7 +696,7 @@
     "video": null
   },
   {
-    "number": 89,
+    "number": 88,
     "name": "Nana & Enzo",
     "relationship": "",
     "text": "Silly faces, 2024",
@@ -712,7 +704,7 @@
     "video": null
   },
   {
-    "number": 90,
+    "number": 89,
     "name": "Mary & Larry",
     "relationship": "",
     "text": "Nantucket",
@@ -720,7 +712,7 @@
     "video": null
   },
   {
-    "number": 91,
+    "number": 90,
     "name": "Penelope",
     "relationship": "",
     "text": "Nana, I have had countless of fun times with you in my life. Whether it be whenever you helped me with a craft I wanted to do, flipping through your old scrapbooks, or shopping at Barnes and Nobles for our next reads. I cannot wait to make more memories with you, and I am eternally grateful that I have the best and loving Nana there is. Thank you for being my Nana \ud83e\udd0d.",
@@ -728,7 +720,7 @@
     "video": null
   },
   {
-    "number": 92,
+    "number": 91,
     "name": "Enzo, Luca, Nana",
     "relationship": "",
     "text": "Story time with Nana",
@@ -736,7 +728,7 @@
     "video": null
   },
   {
-    "number": 93,
+    "number": 92,
     "name": "Mary & Larry",
     "relationship": "",
     "text": "Evening out, Back-scratch, Roseville 2019",
@@ -744,7 +736,7 @@
     "video": null
   },
   {
-    "number": 94,
+    "number": 93,
     "name": "Nana and Penelope",
     "relationship": "",
     "text": null,
@@ -752,7 +744,7 @@
     "video": null
   },
   {
-    "number": 95,
+    "number": 94,
     "name": "Nana & the girls",
     "relationship": "",
     "text": "Yummy breakfast in Hawaii",
@@ -760,15 +752,15 @@
     "video": null
   },
   {
-    "number": 96,
-    "name": "Mary",
+    "number": 95,
+    "name": "Larry",
     "relationship": "",
     "text": "Hotel in Italy, 2023",
     "photo": "assets/photos/IMG_2544.jpeg",
     "video": null
   },
   {
-    "number": 97,
+    "number": 96,
     "name": "Happy birthday Nana!",
     "relationship": "",
     "text": "Blowing out candles with the grandkids, 2021",
@@ -776,7 +768,7 @@
     "video": null
   },
   {
-    "number": 98,
+    "number": 97,
     "name": "Mary & Larry",
     "relationship": "",
     "text": "Tripp's wedding, 2004",
@@ -784,7 +776,7 @@
     "video": null
   },
   {
-    "number": 99,
+    "number": 98,
     "name": "Nana & Tripp on the train",
     "relationship": "",
     "text": "Mother's Day outing, 2018",
@@ -792,7 +784,7 @@
     "video": null
   },
   {
-    "number": 100,
+    "number": 99,
     "name": "Mary & Elisabeth",
     "relationship": "",
     "text": "Selfie, 2018",
@@ -800,7 +792,7 @@
     "video": null
   },
   {
-    "number": 101,
+    "number": 100,
     "name": "Judy, Joe, Joseph, Vincent & Anna",
     "relationship": "",
     "text": "Mary, you have this special gift of knowing things of the heart. You create beautiful crafts with care, attention to detail and love, for those you love. Every piece is a treasure, just as you are treasured.",
@@ -808,15 +800,15 @@
     "video": null
   },
   {
-    "number": 102,
-    "name": "Mary, Heather & grandson",
+    "number": 101,
+    "name": "Luca, Elisabeth & Mary",
     "relationship": "",
     "text": "Napa, 2021",
     "photo": "assets/photos/IMG_0300.JPG",
     "video": null
   },
   {
-    "number": 103,
+    "number": 102,
     "name": "Whale Watching!",
     "relationship": "",
     "text": "Kona, Big Island, Hawaii 2022",
@@ -824,15 +816,15 @@
     "video": null
   },
   {
-    "number": 104,
-    "name": "Brian, Heather, Penelope & Juliette",
+    "number": 103,
+    "name": "Juliette's Birthday",
     "relationship": "",
-    "text": null,
+    "text": "Monterey, 2026",
     "photo": "assets/photos/IMG_2585.jpeg",
     "video": null
   },
   {
-    "number": 105,
+    "number": 104,
     "name": "Toni",
     "relationship": "",
     "text": null,
@@ -840,7 +832,7 @@
     "video": "assets/videos/Toni Message.mov"
   },
   {
-    "number": 106,
+    "number": 105,
     "name": "The Fleshman family",
     "relationship": "",
     "text": "Toni's Wedding",
@@ -848,23 +840,15 @@
     "video": null
   },
   {
-    "number": 107,
-    "name": "Young Mary",
-    "relationship": "",
-    "text": "High school days",
-    "photo": "assets/photos/IMG_3561.jpg",
-    "video": null
-  },
-  {
-    "number": 108,
-    "name": "Mary, Heather & grandson",
+    "number": 106,
+    "name": "Luca, Elisabeth & Mary",
     "relationship": "",
     "text": "Napa day out, 2021",
     "photo": "assets/photos/4F4C3E5F-150C-49E6-893C-8CF56865D85D.jpeg",
     "video": null
   },
   {
-    "number": 109,
+    "number": 107,
     "name": "Mary & Larry",
     "relationship": "",
     "text": "Giants game at AT&T Park, 2017",
@@ -872,7 +856,7 @@
     "video": null
   },
   {
-    "number": 110,
+    "number": 108,
     "name": "Family dinner",
     "relationship": "",
     "text": "Thanksgiving gathering, 2018",
@@ -880,7 +864,7 @@
     "video": null
   },
   {
-    "number": 111,
+    "number": 109,
     "name": "Mary, Larry & Zane",
     "relationship": "",
     "text": "Zane's 8th Grade Graduation, 2024",
@@ -888,7 +872,7 @@
     "video": null
   },
   {
-    "number": 112,
+    "number": 110,
     "name": "Mary, Larry & Elisabeth",
     "relationship": "",
     "text": "Napa Golf Tournament, 2018",
@@ -896,7 +880,7 @@
     "video": null
   },
   {
-    "number": 113,
+    "number": 111,
     "name": "Brian, Heather, Penelope & Juliette",
     "relationship": "",
     "text": null,
