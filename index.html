@@ -445,19 +445,6 @@
       var hasPhoto = moment.photo != null;
       var hasVideo = moment.video != null;
 
-      // Check if this is the grandkids finale (last moment)
-      if (isLast && total > 1) {
-        slide.classList.add('tv-slide-finale-wrap');
-        slide.innerHTML =
-          '<div class="tv-slide-finale">' +
-            '<div class="finale-number">70</div>' +
-            '<div class="finale-text">The grandkids — live</div>' +
-            '<div class="finale-sub">This moment belongs to them.</div>' +
-          '</div>';
-        slide.dataset.finale = 'true';
-        return slide;
-      }
-
       if (hasVideo) {
         var video = document.createElement('video');
         video.src = moment.video;
@@ -527,11 +514,6 @@
       // Clear existing timer
       clearTimeout(tvTimer);
 
-      // Don't auto-advance on finale
-      if (slide.dataset.finale === 'true') {
-        return;
-      }
-
       // Handle video slides
       if (slide.dataset.video === 'true') {
         var video = slide.querySelector('video');
@@ -551,6 +533,9 @@
     function tvAdvance() {
       if (tvCurrentIndex < tvMoments.length - 1) {
         showTvSlide(tvCurrentIndex + 1);
+      } else {
+        // Loop back to the beginning
+        showTvSlide(0);
       }
     }
 
@@ -566,7 +551,7 @@
       if (!tvPaused) {
         // Resume — set timer for current slide
         var slide = document.getElementById('tv-slides-container').querySelectorAll('.tv-slide')[tvCurrentIndex];
-        if (slide.dataset.finale !== 'true' && slide.dataset.video !== 'true') {
+        if (slide.dataset.video !== 'true') {
           tvTimer = setTimeout(tvAdvance, SLIDE_DURATION);
         }
       } else {
